@@ -1,6 +1,6 @@
 import turtle
 import numpy as np
-
+import random
 
 def main(speed=0, bg_color="grey"):
     # create Turtle object
@@ -25,6 +25,8 @@ def main(speed=0, bg_color="grey"):
 
         # Go to the start position of the snowflake
         myTurtle.penup()
+        turtle.colormode(255)
+        myTurtle.pencolor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         myTurtle.goto(pos[0], pos[1])
         myTurtle.pendown()
 
@@ -36,6 +38,7 @@ def main(speed=0, bg_color="grey"):
 
 def snowflake_branch(size, myTurtle):
     # This function draws one branch of the snowflake.
+
     for _ in range(3):
         for _ in range(3):
             myTurtle.forward(size / 3)
